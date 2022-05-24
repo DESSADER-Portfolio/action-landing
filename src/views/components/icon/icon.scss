@@ -2,6 +2,13 @@ $root-class: "icon";
 
 .#{$root-class} {
   display: inline-block;
+  width: 24px;
+  height: 24px;
   line-height: 0;
   fill: $dark-blue-500;
+
+  &__svg {
+    width: inherit;
+    height: inherit;
+  }
 }
