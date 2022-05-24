@@ -1,0 +1,13 @@
+$root-class: "container";
+
+.#{$root-class} {
+  width: map-get($map: $container-width, $key: default);
+  margin: 0 auto;
+
+  @each $breakpoint, $value in $breakpoints {
+    @include breakpoint($breakpoint) {
+      width: map-get($map: $container-width, $key: $breakpoint);
+      @if $breakpoint == sm { padding: 0 20px; }
+    }
+  }
+}

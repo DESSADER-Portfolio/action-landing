@@ -1,0 +1,23 @@
+mixin textField(props = {})
+  - const rootClassName = "text-field";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const type = props.type || "text";
+  - const value = props.value || "";
+  - const placeholder = props.placeholder || "";
+  -
+    const classes = [
+      rootClassName,
+      className
+    ];
+
+  div(
+    class = classes 
+    style = style
+  )
+    input(
+      class = `${rootClassName}__control`
+      type = type
+      value = value
+      placeholder = placeholder
+    )

@@ -1,0 +1,31 @@
+@mixin font-face(
+  $name,
+  $path,
+  $formats,
+  $weight: 500,
+  $style: normal,
+  $stretch: normal,
+  $variant: normal
+) {
+  @font-face {
+    font-family: $name;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+    font-variant: $variant;
+    font-stretch: $stretch;
+
+    @each $format, $format-data in $formats {
+      src: build-path($path, $format-data);
+    }
+  }
+}
+
+@function build-path($path, $format-data) {
+  $ext: map-get($map: $format-data, $key: ext);
+  $name: map-get($map: $format-data, $key: name);
+
+  $path: url("#{$path}.#{$ext}") format("#{$name}");
+
+  @return $path;
+}

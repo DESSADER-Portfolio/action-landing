@@ -1,0 +1,30 @@
+{
+  "flex": {
+    "directions": [
+      "row",
+      "column",
+      "row-reverse",
+      "column-reverse"
+    ],
+    "justifyContent": [
+      "flex-start",
+      "flex-end",
+      "center",
+      "space-between",
+      "space-around",
+      "space-evenly"
+    ],
+    "alignItems": [
+      "flex-start",
+      "flex-end",
+      "center",
+      "baseline",
+      "stretch"
+    ],
+    "flexWrap": [
+      "nowrap",
+      "wrap",
+      "wrap-reverse"
+    ]
+  }
+}

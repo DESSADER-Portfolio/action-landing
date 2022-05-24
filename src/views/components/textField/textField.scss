@@ -1,0 +1,13 @@
+$root-class: "text-field";
+
+.#{$root-class} {
+  &__control {
+    display: blobck;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 16px;
+    font-family: $font-family;
+    font-size: $font-base-size;
+    font-weight: map-get($map: $font-weights, $key: regular);
+  }
+}

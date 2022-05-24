@@ -1,0 +1,19 @@
+@import "utils/utils";
+@import "helpers/helpers";
+@import "common/common";
+
+@include create-spacing-helper($count: 200, $step: 4);
+@include create-display-helper();
+@include create-flex-helper();
+
+body {
+  font-family: $font-family;
+  font-size: $font-base-size;
+  font-weight: map-get($map: $font-weights, $key: regular);
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+@import "@components/scss";

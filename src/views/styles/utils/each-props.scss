@@ -1,0 +1,13 @@
+@mixin each-props($props-map, $property-name, $breakpoint-name: "") {
+  $modifier: "";
+
+  @if $breakpoint-name != "" {
+    $modifier: $breakpoint-name + "\\:";
+  }
+
+  @each $property in $props-map {
+    .#{$modifier}#{$property-name}-#{$property} {
+      #{$property-name}: #{$property};
+    }
+  }
+}

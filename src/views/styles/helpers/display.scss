@@ -1,0 +1,10 @@
+@import "../utils/each-props";
+
+@mixin create-display-helper() {
+  @include each-props($display-props, "display");
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    @include breakpoint($breakpoint-name) {
+      @include each-props($display-props, "display", $breakpoint-name);
+    }
+  }
+}

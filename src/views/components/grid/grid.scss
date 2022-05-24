@@ -1,0 +1,10 @@
+$root-class: "grid";
+
+.#{$root-class} {
+  $margin: - calc($grid-column-gap / 2);
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 $margin;
+
+  @import "./column/column";
+}

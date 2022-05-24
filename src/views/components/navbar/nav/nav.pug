@@ -1,0 +1,18 @@
+mixin nav(props = {})
+  - const rootClassName = "nav";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const items = props.items || [];
+  -
+    const classes = [
+      rootClassName,
+      className
+    ];
+
+  ul(
+    class = classes 
+    style = style
+  )
+    each item in items
+      li(class = `${rootClassName}__item`)
+        a(class = `${rootClassName}__link` href = item.link) #{item.label}

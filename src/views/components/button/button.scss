@@ -1,0 +1,15 @@
+$root-class: "button";
+
+.#{$root-class} {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  background: #CCCCCC;
+  font-family: $font-family;
+  font-weight: map-get($map: $font-weights, $key: semibold);
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  transition-property: background, border-color, color;
+}

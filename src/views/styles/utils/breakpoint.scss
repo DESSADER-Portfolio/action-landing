@@ -1,0 +1,9 @@
+@import "../common/vars";
+
+@mixin breakpoint($breakpoint) {
+  $current-breakpoint: map-get($map: $breakpoints, $key: $breakpoint);
+
+  @media (max-width: $current-breakpoint) {
+    @content;
+  }
+}

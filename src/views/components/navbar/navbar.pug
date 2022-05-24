@@ -1,0 +1,37 @@
+include nav/nav.pug
+
+mixin navbar(props = {})
+  - const rootClassName = "navbar";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const menuItems = props.menuItems || [];
+  -
+    const classes = [
+      rootClassName,
+      className
+    ];
+
+  nav(
+    class = classes 
+    style = style
+  )
+    +container()
+      +stack({
+        class: [
+          "justify-content-space-between",
+          "align-items-center"
+        ]
+      })
+        +typography({
+          class: `${rootClassName}__logo`,
+          variant: "body-large", 
+          weight: "semibold"
+        }) Webpack Starter
+        div(class = "menu")
+          +nav({
+            items: menuItems
+          })
+        button(class = "menu-control")
+          span
+          span
+          span

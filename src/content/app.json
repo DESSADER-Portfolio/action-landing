@@ -1,0 +1,49 @@
+{
+  "name": "Action",
+  "meta": {
+    "description": "Search and find your dream job is now easier than ever. Just browse a job and apply if you need to",
+    "keywords": ["job", "search job", "freelance"]
+  },
+  "navigation": {
+    "header": {
+      "menu": [
+        { "label": "Home", "link": "#" },
+        { "label": "Features", "link": "#" },
+        { "label": "Post A Job", "link": "#" },
+        { "label": "About Us", "link": "#" }
+      ],
+      "extra": [
+        { "label": "Log in", "link": "#" },
+        { "label": "Get Started", "link": "#" }
+      ]
+    },
+    "footer": {
+      "menu": {
+        "Community": [
+          { "label": "Job Board", "link": "#" },
+          { "label": "Career Advice", "link": "#" },
+          { "label": "Pricing", "link": "#" },
+          { "label": "Powered", "link": "#" }
+        ],
+        "About Us": [
+          { "label": "Career", "link": "#" },
+          { "label": "Internship", "link": "#" },
+          { "label": "Press", "link": "#" },
+          { "label": "Blog", "link": "#" }
+        ],
+        "Feedback": [
+          { "label": "Clients", "link": "#" },
+          { "label": "Reviews", "link": "#" },
+          { "label": "User", "link": "#" },
+          { "label": "Bug Fixing", "link": "#" }
+        ],
+        "Help & Support": [
+          { "label": "Job Search", "link": "#" },
+          { "label": "Hiring", "link": "#" },
+          { "label": "Online Test", "link": "#" }
+        ]
+      },
+      "copyright": ""
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "../utils/each-props";
+
+@mixin create-flex-helper() {
+  @include each-props($flex-direction-props, "flex-direction");
+  @include each-props($justify-content-props, "justify-content");
+  @include each-props($align-items-props, "align-items");
+  @include each-props($flex-wrap-props, "flex-wrap");
+
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    @include breakpoint($breakpoint-name) {
+      @include each-props($flex-direction-props, "flex-direction", $breakpoint-name);
+      @include each-props($justify-content-props, "justify-content", $breakpoint-name);
+      @include each-props($align-items-props, "align-items", $breakpoint-name);
+      @include each-props($flex-wrap-props, "flex-wrap", $breakpoint-name);
+    }
+  }
+}

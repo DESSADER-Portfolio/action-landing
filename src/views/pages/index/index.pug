@@ -1,0 +1,10 @@
+extends /templates/common.pug
+
+block vars
+  - const content = require("@src/content/index.json");
+  - const pageClass = "index-page";
+
+block title
+  title #{appData.name} – #{content.title}
+  
+block content

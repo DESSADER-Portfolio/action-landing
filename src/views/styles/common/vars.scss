@@ -1,0 +1,105 @@
+/*
+* Fonts
+*/
+
+$font-family: "Inter";
+$font-weights: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700
+);
+$font-base-size: 16px;
+$font-root-path: "../../assets/fonts";
+
+/*
+* Grid
+*/
+
+$grid-column-count: 12;
+$grid-column-gap: 20px;
+
+$container-width: (
+  default: 1140px,
+  xl: 960px,
+  lg: 720px,
+  md: 540px,
+  sm: 100%,
+);
+
+$breakpoints: (
+  xl: 1200px,
+  lg: 990px,
+  md: 770px,
+  sm: 580px,
+);
+
+/*
+* Spacing Directions
+*/
+
+$spacing-directions: (
+  top,
+  left,
+  right,
+  bottom
+);
+
+/*
+* Display
+*/
+
+$display-props: (
+  block,
+  inline-block,
+  flex,
+  inline-flex,
+  none
+);
+
+/*
+* Flex Direction
+*/
+
+$flex-direction-props: (
+  "row",
+  "column",
+  "row-reverse",
+  "column-reverse"
+);
+
+/*
+* Justify Content
+*/
+
+$justify-content-props: (
+  "flex-start",
+  "flex-end",
+  "center",
+  "space-between",
+  "space-around",
+  "space-evenly"
+);
+
+/*
+* Align Items
+*/
+
+$align-items-props: (
+  "flex-start",
+  "flex-end",
+  "center",
+  "baseline",
+  "stretch"
+);
+
+/*
+* Wrap
+*/
+
+$flex-wrap-props: (
+  "nowrap",
+  "wrap",
+  "wrap-reverse"
+);

@@ -1,0 +1,74 @@
+@import "../common/vars";
+@import "../utils/breakpoint";
+
+@mixin each-spacing($count, $step, $breakpoint-name: "") {
+  $modifier: "";
+
+  @if $breakpoint-name != "" {
+    $modifier: $breakpoint-name + "\\:";
+  }
+
+  @for $i from 0 through calc($count / $step) {
+    $value: $i * $step;
+    @each $direction in $spacing-directions {
+      .#{$modifier}m#{str-slice($direction, 0, 1)}-#{$value} {
+        margin-#{$direction}: $value + px;
+      }
+
+      .#{$modifier}p#{str-slice($direction, 0, 1)}-#{$value} {
+        padding-#{$direction}: $value + px;
+      }
+    }
+
+    .#{$modifier}my-#{$value} {
+      margin: $value + px 0;
+    }
+
+    .#{$modifier}mx-#{$value} {
+      margin: 0 $value + px;
+    }
+
+    .#{$modifier}py-#{$value} {
+      padding: $value + px 0;
+    }
+
+    .#{$modifier}px-#{$value} {
+      padding: 0 $value + px;
+    }
+  }
+
+  @each $direction in $spacing-directions {
+    .#{$modifier}m#{str-slice($direction, 0, 1)}-auto {
+      margin-#{$direction}: auto;
+    }
+
+    .#{$modifier}p#{str-slice($direction, 0, 1)}-auto {
+      padding-#{$direction}: auto;
+    }
+  }
+
+  .#{$modifier}my-auto {
+    margin: auto 0;
+  }
+
+  .#{$modifier}mx-auto {
+    margin: 0 auto;
+  }
+
+  .#{$modifier}py-auto {
+    padding: auto 0;
+  }
+
+  .#{$modifier}px-auto {
+    padding: 0 auto;
+  }
+}
+
+@mixin create-spacing-helper($count: 200, $step: 4) {
+  @include each-spacing($count, $step);
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    @media (max-width: $breakpoint-value) {
+      @include each-spacing($count, $step, $breakpoint-name);
+    }
+  }
+}

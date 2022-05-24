@@ -1,0 +1,96 @@
+$root-class: "typography";
+
+$heading-variants: (
+  h1: (
+    default: (font-size: 60px, line-height: 70px),
+    xl: (font-size: 50px, line-height: 60px),
+    lg: (font-size: 45px, line-height: 55px),
+    md: (font-size: 40px, line-height: 50px)
+  ),
+  h2: (
+    default: (font-size: 50px, line-height: 60px),
+    xl: (font-size: 40px, line-height: 50px),
+    lg: (font-size: 35px, line-height: 45px),
+    md: (font-size: 30px, line-height: 40px)
+  ),
+  h3: (
+    default: (font-size: 45px, line-height: 55px),
+    xl: (font-size: 35px, line-height: 45px),
+    lg: (font-size: 30px, line-height: 40px),
+    md: (font-size: 25px, line-height: 35px)
+  ),
+  h4: (
+    default: (font-size: 40px, line-height: 50px),
+    xl: (font-size: 30px, line-height: 40px),
+    lg: (font-size: 25px, line-height: 35px),
+    md: (font-size: 20px, line-height: 30px)
+  )
+);
+
+.#{$root-class} {
+  display: block;
+
+  /*
+  * Weigths
+  */
+
+  @each $weight, $value in $font-weights {
+    &\:weight-#{$weight} { font-weight: $value; }
+  }
+
+  /*
+  * Headings
+  */
+
+  @each $heading, $breakpoints in $heading-variants {
+    &\:variant-#{$heading} {
+      @each $breakpoint-name, $breakpoint-styles in $breakpoints {
+        $current-breakpoint-style: map-get($map: $breakpoints, $key: $breakpoint-name);
+        @if $breakpoint-name == default {
+          @include each-styles($current-breakpoint-style);
+        } @else {
+          @include breakpoint($breakpoint-name) {
+            @include each-styles($current-breakpoint-style);
+          }
+        }
+      }
+    }
+  }
+
+  /*
+  * Body text
+  */
+
+  &\:variant-body-small {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &\:variant-body-default {
+    font-size: $font-base-size;
+    line-height: 26px;
+  }
+
+  &\:variant-body-large {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /*
+  * Caption
+  */
+
+  &\:variant-caption {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  /*
+  * Other
+  */
+
+  span {
+    display: block;
+    overflow: hidden;
+  }
+}

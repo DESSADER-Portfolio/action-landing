@@ -1,0 +1,15 @@
+mixin stack(props = {})
+  - const rootClassName = "stack";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  -
+    const classes = [
+      rootClassName,
+      className
+    ];
+
+  div(
+    class = classes 
+    style = style
+  )
+    block

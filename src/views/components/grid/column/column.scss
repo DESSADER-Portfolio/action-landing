@@ -1,0 +1,39 @@
+$root-class: "column";
+
+.#{$root-class} {
+  $padding: calc($grid-column-gap / 2);
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 0 $padding;
+}
+
+@mixin each-columns($breakpoint-name: "") {
+  $modifier: "";
+  $separator: "";
+
+  @if $breakpoint-name != "" {
+    $modifier: $breakpoint-name + "\\:";
+    $separator: "-";
+  } @else {
+    $modified: "-";
+    $separator: "-";
+  }
+
+  @for $i from 1 through $grid-column-count {
+    .#{$modifier}#{$root-class}#{$separator}#{$i} {
+      flex: 0 0 calc($i / 12) * 100%;
+    }
+
+    .#{$modifier}#{$root-class}#{$separator}offset-#{$i} {
+      margin-left: calc($i / 12) * 100%;
+    }
+  }
+}
+
+@include each-columns();
+
+@each $breakpoint-name, $breakpoint-value in $breakpoints {
+  @include breakpoint($breakpoint-name) {
+    @include each-columns($breakpoint-name);
+  }
+}

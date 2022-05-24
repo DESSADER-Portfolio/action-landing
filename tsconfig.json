@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "module": "es6",
+    "target": "es5",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "allowJs": true,
+    "moduleResolution": "node",
+    "paths": {
+      "@components/js": ["./src/views/components/components.ts"] 
+    },
+  },
+  "include": ["./src/**/*.ts"],
+  "exclude": ["node_modules"]
+}

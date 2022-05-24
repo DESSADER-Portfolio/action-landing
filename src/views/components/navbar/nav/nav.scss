@@ -1,0 +1,21 @@
+$root-class: "nav";
+
+.#{$root-class} {
+  display: flex;
+
+  &__link {
+    display: block;
+    padding: 24px 16px;
+    color: #000000;
+    text-decoration: none;
+
+    &:hover {
+      background: rgba(#000000, 0.05);
+    }
+  }
+
+  @include breakpoint(md) {
+    flex-direction: column;
+    text-align: center;
+  }
+}

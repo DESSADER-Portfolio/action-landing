@@ -1,0 +1,93 @@
+$root-class: "navbar";
+
+.#{$root-class} {
+  border-bottom: 1px solid rgba(#000000, 0.2);
+
+  &__logo,
+  .menu-control {
+    z-index: 6;
+  }
+
+  .menu {
+    display: flex;
+  }
+
+  .menu-control {
+    position: relative;
+    display: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 44px;
+    height: 36px;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    span {
+      position: absolute;
+      left: 6px;
+      display: block;
+      box-sizing: border-box;
+      width: 32px;
+      height: 2px;
+      border-radius: 2px;
+      background: #000000;
+      transition-duration: 0.3s;
+      transition-property: top, left, transform;
+
+      &:nth-child(1) {
+        top: 8px;
+      }
+
+      &:nth-child(3) {
+        top: 28px;
+      }
+    }
+
+    &\:active {
+      span:nth-child(1) {
+        top: 18px;
+        transform: rotate(45deg);
+      }
+
+      span:nth-child(2) {
+        left: -100%;
+      }
+
+      span:nth-child(3) {
+        top: 18px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  @import "nav/nav";
+
+  @include breakpoint(md) {
+    padding: 20px 0;
+
+    .menu {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      z-index: 4;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      padding-top: 80px;
+      background: #EAEAEA;
+      opacity: 0;
+      transition-duration: 0.3s;
+      transition-property: top, opacity;
+
+      &\:active {
+        top: 0;
+        opacity: 1;
+      }
+    }
+
+    .menu-control {
+      display: block;
+    }
+  }
+}
