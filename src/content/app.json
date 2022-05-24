@@ -13,8 +13,8 @@
         { "label": "About Us", "link": "#" }
       ],
       "extra": [
-        { "label": "Log in", "link": "#" },
-        { "label": "Get Started", "link": "#" }
+        { "label": "Log in", "link": "#", "variant": "secondary" },
+        { "label": "Get Started", "link": "#", "variant": "primary-dark" }
       ]
     },
     "footer": {

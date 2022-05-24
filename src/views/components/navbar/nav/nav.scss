@@ -5,16 +5,20 @@ $root-class: "nav";
 
   &__link {
     display: block;
-    padding: 24px 16px;
-    color: #000000;
+    padding: 16px;
+    border-radius: 8px;
+    color: $light-blue-800;
     text-decoration: none;
+    transition-duration: 0.1s;
+    transition-property: background, color;
 
     &:hover {
-      background: rgba(#000000, 0.05);
+      background: $light-blue-050;
+      color: $dark-blue-500;
     }
   }
 
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     flex-direction: column;
     text-align: center;
   }
