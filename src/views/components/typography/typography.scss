@@ -2,33 +2,19 @@ $root-class: "typography";
 
 $heading-variants: (
   h1: (
-    default: (font-size: 60px, line-height: 70px),
-    xl: (font-size: 50px, line-height: 60px),
-    lg: (font-size: 45px, line-height: 55px),
-    md: (font-size: 40px, line-height: 50px)
+    default: (font-size: 66px, line-height: 76px),
   ),
   h2: (
-    default: (font-size: 50px, line-height: 60px),
-    xl: (font-size: 40px, line-height: 50px),
-    lg: (font-size: 35px, line-height: 45px),
-    md: (font-size: 30px, line-height: 40px)
+    default: (font-size: 46px, line-height: 56px),
   ),
   h3: (
-    default: (font-size: 45px, line-height: 55px),
-    xl: (font-size: 35px, line-height: 45px),
-    lg: (font-size: 30px, line-height: 40px),
-    md: (font-size: 25px, line-height: 35px)
-  ),
-  h4: (
-    default: (font-size: 40px, line-height: 50px),
-    xl: (font-size: 30px, line-height: 40px),
-    lg: (font-size: 25px, line-height: 35px),
-    md: (font-size: 20px, line-height: 30px)
+    default: (font-size: 20px, line-height: 30px),
   )
 );
 
 .#{$root-class} {
   display: block;
+  font-family: $font-family;
 
   /*
   * Weigths
@@ -44,6 +30,9 @@ $heading-variants: (
 
   @each $heading, $breakpoints in $heading-variants {
     &\:variant-#{$heading} {
+      font-family: $font-family-alt;
+      font-weight: map-get($map: $font-weights, $key: bold);
+
       @each $breakpoint-name, $breakpoint-styles in $breakpoints {
         $current-breakpoint-style: map-get($map: $breakpoints, $key: $breakpoint-name);
         @if $breakpoint-name == default {
@@ -74,15 +63,6 @@ $heading-variants: (
   &\:variant-body-large {
     font-size: 18px;
     line-height: 28px;
-  }
-
-  /*
-  * Caption
-  */
-
-  &\:variant-caption {
-    font-size: 12px;
-    line-height: 20px;
   }
 
   /*
