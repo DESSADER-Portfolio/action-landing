@@ -1,1 +1,80 @@
 @import "../utils/font-face";
+
+@include font-face(
+  $name: "Poppins",
+  $path: "#{$font-root-path}/Poppins/Poppins-Light",
+  $formats: (
+    woff: (ext: "woff", name: "woff"),
+    eot: (ext: "eot", name: "embedded-opentype"),
+    ttf: (ext: "ttf", name: "truetype")
+  ),
+  $weight: 300
+);
+
+@include font-face(
+  $name: "Poppins",
+  $path: "#{$font-root-path}/Poppins/Poppins-Regular",
+  $formats: (
+    woff: (ext: "woff", name: "woff"),
+    eot: (ext: "eot", name: "embedded-opentype"),
+    ttf: (ext: "ttf", name: "truetype")
+  ),
+  $weight: 400
+);
+
+@include font-face(
+  $name: "Poppins",
+  $path: "#{$font-root-path}/Poppins/Poppins-Medium",
+  $formats: (
+    woff: (ext: "woff", name: "woff"),
+    eot: (ext: "eot", name: "embedded-opentype"),
+    ttf: (ext: "ttf", name: "truetype")
+  ),
+  $weight: 500
+);
+
+@include font-face(
+  $name: "Poppins",
+  $path: "#{$font-root-path}/Poppins/Poppins-Semibold",
+  $formats: (
+    woff: (ext: "woff", name: "woff"),
+    eot: (ext: "eot", name: "embedded-opentype"),
+    ttf: (ext: "ttf", name: "truetype")
+  ),
+  $weight: 600
+);
+
+@include font-face(
+  $name: "Poppins",
+  $path: "#{$font-root-path}/Poppins/Poppins-Bold",
+  $formats: (
+    woff: (ext: "woff", name: "woff"),
+    eot: (ext: "eot", name: "embedded-opentype"),
+    ttf: (ext: "ttf", name: "truetype")
+  ),
+  $weight: 700
+);
+
+@include font-face(
+  $name: "Sen",
+  $path: "#{$font-root-path}/Sen/Sen-Regular",
+  $formats: (
+    woff: (ext: "woff", name: "woff"),
+    woff2: (ext: "woff2", name: "woff2"),
+    eot: (ext: "eot", name: "embedded-opentype"),
+    ttf: (ext: "ttf", name: "truetype")
+  ),
+  $weight: 400
+);
+
+@include font-face(
+  $name: "Sen",
+  $path: "#{$font-root-path}/Sen/Sen-Bold",
+  $formats: (
+    woff: (ext: "woff", name: "woff"),
+    woff2: (ext: "woff2", name: "woff2"),
+    eot: (ext: "eot", name: "embedded-opentype"),
+    ttf: (ext: "ttf", name: "truetype")
+  ),
+  $weight: 700
+);
