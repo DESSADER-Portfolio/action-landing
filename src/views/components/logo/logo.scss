@@ -1,0 +1,10 @@
+$root-class: "logo";
+
+.#{$root-class} {
+  color: $dark-blue-500;
+  font-family: $font-family-alt;
+  font-size: 26px;
+  font-weight: map-get($map: $font-weights, $key: bold);
+  line-height: 36px;
+  text-decoration: none;
+}
