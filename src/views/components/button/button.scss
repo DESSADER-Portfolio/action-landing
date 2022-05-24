@@ -5,11 +5,113 @@ $root-class: "button";
   justify-content: center;
   align-items: center;
   border: 1px solid transparent;
-  background: #CCCCCC;
+  background: transparent;
   font-family: $font-family;
-  font-weight: map-get($map: $font-weights, $key: semibold);
   text-decoration: none;
   cursor: pointer;
-  transition-duration: 0.3s;
+  transition-duration: 0.1s;
   transition-property: background, border-color, color;
+
+  /*
+  * Elements
+  */
+
+  &__icon {
+    display: flex;
+  }
+
+  &__text {
+    font-size: $font-base-size;
+  }
+
+  /*
+  * Sizes
+  */
+
+  &\:size-sm {
+    padding: 12px 24px;
+    border-radius: 12px;
+
+    .#{$root-class}__icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    .#{$root-class}__text {
+      font-weight: map-get($map: $font-weights, $key: regular);
+      line-height: 28px;
+    }
+
+    &.#{$root-class}\:with-icon {
+      gap: 8px;
+    }
+
+    &.#{$root-class}\:only-icon {
+      padding: 12px;
+    }
+  }
+
+  /*
+  * Variants
+  */
+
+  &\:variant-secondary {
+    border-color: $light-blue-300;
+
+    .#{$root-class}__icon {
+      fill: $dark-blue-500;
+    }
+
+    .#{$root-class}__text {
+      color: $dark-blue-500;
+    }
+
+    &:hover {
+      background: $light-blue-050;
+    }
+
+    &:active {
+      background: $light-blue-100;
+    }
+  }
+
+  &\:variant-primary-dark {
+    background: $dark-blue-500;
+
+    .#{$root-class}__icon {
+      fill: $neutral-white;
+    }
+
+    .#{$root-class}__text {
+      color: $neutral-white;
+    }
+
+    &:hover {
+      background: $dark-blue-400;
+    }
+
+    &:active {
+      background: $dark-blue-600;
+    }
+  }
+
+  &\:variant-primary-orange {
+    background: $orange-500;
+
+    .#{$root-class}__icon {
+      fill: $neutral-white;
+    }
+
+    .#{$root-class}__text {
+      color: $neutral-white;
+    }
+
+    &:hover {
+      background: $orange-400;
+    }
+
+    &:active {
+      background: $orange-600;
+    }
+  }
 }
