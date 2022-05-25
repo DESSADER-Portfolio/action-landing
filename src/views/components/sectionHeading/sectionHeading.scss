@@ -1,0 +1,7 @@
+$root-class: "section-heading";
+
+.#{$root-class} {
+  &__description {
+    color: $light-blue-800;
+  }
+}

@@ -1,0 +1,31 @@
+mixin sectionHeading(props = {})
+  - const rootClassName = "section-heading";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const heading = props.heading || [];
+  - const description = props.description || null;
+  -
+    const classes = [
+      rootClassName,
+      className
+    ];
+
+  div(
+    class = classes 
+    style = style
+  )
+    +typography({
+      class: `${rootClassName}__heading`,
+      as: "h2", 
+      variant: "h2"
+    }) 
+      each str in heading
+        span
+          span #{str}
+    if description
+      +typography({
+        class: [`${rootClassName}__description`, "mt-16"],
+        as: "p", 
+        variant: "body-default"
+      }) 
+        | #{description}
