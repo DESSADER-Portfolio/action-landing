@@ -17,6 +17,18 @@
         { "badge": "file", "description": "Directly upload your professional CV" },
         { "badge": "clock", "description": "Scheduling for your proper interview" }
       ]
+    },
+    "about": {
+      "heading": [
+        "We help jobseekers",
+        "to find their jobs"
+      ],
+      "description": "We are here to help jobseekers connect wuth the organizer and companies. We are providing the best opportunies to professionals people.",
+      "items": [
+        "Connect easily with organizers",
+        "Get a job comfortably",
+        "24/7 online support"
+      ]
     }
   }
 }

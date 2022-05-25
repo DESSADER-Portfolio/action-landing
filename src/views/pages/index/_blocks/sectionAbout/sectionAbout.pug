@@ -1,0 +1,67 @@
+mixin sectionAbout(props = {})
+  - const rootClassName = "section-about";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const heading = props.heading || [];
+  - const description = props.description || "";
+  - const items = props.items || [];
+  -
+    const classes = [
+      rootClassName,
+      className,
+      "py-48",
+      "lg:py-40",
+      "md:py-32",
+      "sm:py-16"
+    ];
+
+  // Start: [Section: about]
+  section(
+    class = classes 
+    style = style
+  )
+
+    // Start: [Container] 
+    +container()
+
+      // Start: [Grid] 
+      +grid({class: ["justify-content-space-between", "align-items-center"]})
+
+        // Start: [Column 5] 
+        +column({class: ["column-5", "lg:display-none"]})
+          div(class = `${rootClassName}__illustration`)
+
+        // End: [Column 5] 
+
+        // Start: [Column 5] 
+        +column({class: ["column-5", "xl:column-6", "lg:column-12"]})
+          +sectionHeading({
+            class: "mb-24",
+            heading: heading,
+            description: description
+          })
+
+          // Start: [Stack] 
+          +stack({class: "flex-direction-column"})
+
+            each item, index in items
+              // Start: [Stack: about item] 
+              +stack({class: [
+                  "about-item",
+                  "align-items-center",
+                  items.length !== index + 1 ? "mb-4" : null
+                ]
+              })
+                +icon({class: ["about-item__icon", "mr-4"], icon: "check"})
+                +typography({
+                  class: "about-item__description", 
+                  variant: "body-default",
+                  weight: "medium"
+                }) 
+                  | #{item}
+              // End: [Stack: about item] 
+          // End: [Stack] 
+        // End: [Column 5] 
+      // End: [Grid] 
+    // End: [Container] 
+  // End: [Section: about] 
