@@ -1,0 +1,60 @@
+mixin sectionIntro(props = {})
+  - const rootClassName = "section-intro";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const heading = props.heading || [];
+  - const description = props.description || "";
+  -
+    const classes = [
+      rootClassName,
+      className
+    ];
+
+  // Start: [Section: intro]
+  section(
+    class = classes 
+    style = style
+  )
+
+    // Start: [Container] 
+    +container()
+
+      // Start: [Stack: wrapper] 
+      div(class = [
+        `${rootClassName}__wrapper`, 
+        "py-64", 
+        "px-64",
+        "sm:py-24",
+        "sm:px-24"
+      ])
+
+        // Start: [Grid] 
+        +grid({class: ["align-items-center", "lg:flex-direction-column-reverse"]})
+          
+          // Start: [Column 6] 
+          +column({class: ["column-6", "lg:column-12"]})
+            +typography({
+              class: [`${rootClassName}__heading`, "mb-16"],
+              as: "h1",
+              variant: "h1"
+            })
+              each str in heading
+                span
+                  span #{str}
+            +typography({
+              class: [`${rootClassName}__description`],
+              as: "p", 
+              variant: "body-large"
+            })
+              | #{description}
+          // End: [Column 6]
+
+          // Start: [Column 6] 
+          +column({class: "column-6 lg:display-none"})
+            div(class = [`${rootClassName}__illustration`, "lg:mb-24"])
+            
+          // End: [Column 6] 
+        // End: [Grid] 
+      // End: [Stack: wrapper] 
+    // End: [Container] 
+  // End: [Section: intro] 

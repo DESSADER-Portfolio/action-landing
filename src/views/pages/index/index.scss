@@ -1,0 +1,7 @@
+@import "@styles/common/vars";
+@import "@styles/utils/breakpoint";
+$root-class: "index-page";
+
+.#{$root-class} {
+  @import "_blocks/blocks";
+}
