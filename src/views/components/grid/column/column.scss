@@ -22,6 +22,7 @@ $root-class: "column";
   @for $i from 1 through $grid-column-count {
     .#{$modifier}#{$root-class}#{$separator}#{$i} {
       flex: 0 0 calc($i / 12) * 100%;
+      width: calc($i / 12) * 100%;
     }
 
     .#{$modifier}#{$root-class}#{$separator}offset-#{$i} {
