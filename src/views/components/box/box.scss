@@ -1,0 +1,12 @@
+$root-class: "box";
+
+.#{$root-class} {
+  border: 1px solid $light-blue-300;
+  border-radius: 12px;
+  transition-duration: 0.2s;
+  transition-property: border, box-shadow;
+
+  &:hover {
+    box-shadow: 0 16px 54px rgba(0 0 0 / 5%);
+  }
+}
