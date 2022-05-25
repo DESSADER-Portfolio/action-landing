@@ -1,0 +1,28 @@
+$root-class: "section-features";
+
+.#{$root-class} {
+  .feature-item {
+    &__badge {
+      display: flex;
+      flex: 0 0 auto;
+      width: 88px;
+      height: 88px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include breakpoint(sm) {
+    .feature-item {
+      &__badge {
+        width: 68px;
+        height: 68px;
+      }
+
+      &__description {
+        font-size: 18px;
+        font-weight: map-get($map: $font-weights, $key: regular);
+      }
+    }
+  }
+}

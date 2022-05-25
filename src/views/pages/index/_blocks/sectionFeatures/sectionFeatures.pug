@@ -1,0 +1,84 @@
+mixin sectionFeatures(props = {})
+  - const rootClassName = "section-features";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const heading = props.heading || [];
+  - const description = props.description || "";
+  - const items = props.items || [];
+  -
+    const classes = [
+      rootClassName,
+      className,
+      "py-92",
+      "lg:py-52",
+      "md:py-44",
+      "sm:py-32"
+    ];
+
+  // Start: [Section: features]
+  section(
+    class = classes 
+    style = style
+  ) 
+    // Start: [Container] 
+    +container()
+      
+      // Start: [Grid] 
+      +grid({class: "justify-content-center"})
+
+        // Start: [Column 6] 
+        +column({class: ["column-6", "lg:column-8", "md:column-12"]})
+          +sectionHeading({
+            class: [
+              "text-align-center", 
+              "sm:text-align-left",
+              "mb-44", 
+              "md:mb-24"
+            ],
+            heading: heading,
+            description: description
+          })
+        // End: [Column 6] 
+      // End: [Grid] 
+    // End: [Container]
+
+    // Start: [Container] 
+    +container()
+      
+      // Start: [Grid] 
+      +grid()
+
+        each item, index in items
+          // Start: [Column 4] 
+          +column({class: ["column-4", "md:column-12"]})
+            +box({class: [
+              "feature-item",
+              "display-flex",
+              "flex-direction-column",
+              "sm:flex-direction-row",
+              "align-items-center",
+              "py-32", 
+              "px-64",
+              "xl:px-12",
+              "sm:py-12",
+              items.length !== index + 1 ? "md:mb-16" : null
+            ]})
+              div(
+                class = [
+                  "feature-item__badge", 
+                  "mb-24", 
+                  "sm:mb-0",
+                  "sm:mr-12"
+                ]
+                style = `background-image: url(${require(`../../../assets/images/badge-${item.badge}.svg`)})`
+              )
+              +typography({
+                class: ["feature-item__description", "text-align-center", "sm:text-align-left"],
+                as: "p",
+                variant: "h3"
+              })
+                | #{item.description}
+          // End: [Column 4] 
+      // End: [Grid] 
+    // End: [Container] 
+  // End: [Section: features] 

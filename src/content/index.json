@@ -8,6 +8,15 @@
         "Employment."
       ],
       "description": "Search and find your dream job is now easier than ever. Just browse a job and apply if you need to."
+    },
+    "features": {
+      "heading": ["Easy way to job"],
+      "description": "Search and find your dream job is now easier than ever. Just browse a job and apply if you need to.",
+      "items": [
+        { "badge": "people", "description": "Build and boost your great profile" },
+        { "badge": "file", "description": "Directly upload your professional CV" },
+        { "badge": "clock", "description": "Scheduling for your proper interview" }
+      ]
     }
   }
 }
