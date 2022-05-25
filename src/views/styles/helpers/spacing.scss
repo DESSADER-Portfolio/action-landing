@@ -21,19 +21,23 @@
     }
 
     .#{$modifier}my-#{$value} {
-      margin: $value + px 0;
+      margin-top: $value + px;
+      margin-bottom: $value + px;
     }
 
     .#{$modifier}mx-#{$value} {
-      margin: 0 $value + px;
+      margin-right: $value + px;
+      margin-left: $value + px;
     }
 
     .#{$modifier}py-#{$value} {
-      padding: $value + px 0;
+      padding-top: $value + px;
+      padding-bottom: $value + px;
     }
 
     .#{$modifier}px-#{$value} {
-      padding: 0 $value + px;
+      padding-right: $value + px;
+      padding-left: $value + px;
     }
   }
 
