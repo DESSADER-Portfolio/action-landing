@@ -1,0 +1,10 @@
+@import "../utils/each-props";
+
+@mixin create-align-helper() {
+  @include each-props($text-align-props, "text-align");
+  @each $breakpoint-name, $breakpoint-value in $breakpoints {
+    @include breakpoint($breakpoint-name) {
+      @include each-props($text-align-props, "text-align", $breakpoint-name);
+    }
+  }
+}
