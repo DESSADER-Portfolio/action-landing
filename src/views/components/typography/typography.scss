@@ -3,6 +3,10 @@ $root-class: "typography";
 $heading-variants: (
   h1: (
     default: (font-size: 66px, line-height: 76px),
+    xl: (font-size: 60px, line-height: 70px),
+    lg: (font-size: 55px, line-height: 65px),
+    md: (font-size: 45px, line-height: 55px),
+    sm: (font-size: 35px, line-height: 45px),
   ),
   h2: (
     default: (font-size: 46px, line-height: 56px),
