@@ -2,17 +2,19 @@ $root-class: "typography";
 
 $heading-variants: (
   h1: (
-    default: (font-size: 66px, line-height: 76px),
-    xl: (font-size: 60px, line-height: 70px),
-    lg: (font-size: 55px, line-height: 65px),
-    md: (font-size: 45px, line-height: 55px),
-    sm: (font-size: 35px, line-height: 45px),
+    default: (font-size: 64px, line-height: 72px),
+    xl: (font-size: 60px, line-height: 68px),
+    lg: (font-size: 56px, line-height: 64px),
+    md: (font-size: 52px, line-height: 60px),
+    sm: (font-size: 36px, line-height: 44px),
   ),
   h2: (
-    default: (font-size: 46px, line-height: 56px),
+    default: (font-size: 44px, line-height: 52px),
+    md: (font-size: 40px, line-height: 48px),
+    sm: (font-size: 28px, line-height: 36px),
   ),
   h3: (
-    default: (font-size: 20px, line-height: 30px),
+    default: (font-size: 20px, line-height: 28px),
   )
 );
 
@@ -61,7 +63,7 @@ $heading-variants: (
 
   &\:variant-body-default {
     font-size: $font-base-size;
-    line-height: 26px;
+    line-height: 24px;
   }
 
   &\:variant-body-large {
