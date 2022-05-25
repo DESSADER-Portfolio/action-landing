@@ -42,7 +42,7 @@ mixin sectionIntro(props = {})
                 span
                   span #{str}
             +typography({
-              class: [`${rootClassName}__description`],
+              class: `${rootClassName}__description`,
               as: "p", 
               variant: "body-large"
             })
@@ -50,7 +50,7 @@ mixin sectionIntro(props = {})
           // End: [Column 6]
 
           // Start: [Column 6] 
-          +column({class: "column-6 lg:display-none"})
+          +column({class: ["column-6", "lg:display-none"]})
             div(class = `${rootClassName}__illustration`)
             
           // End: [Column 6] 
