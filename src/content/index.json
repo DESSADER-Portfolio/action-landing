@@ -29,6 +29,15 @@
         "Get a job comfortably",
         "24/7 online support"
       ]
+    },
+    "categories": {
+      "heading": ["Explore jobs by catagory"],
+      "items": [
+        { "badge": "ui", "name": "UI/UX Designer", "count": "100 Job Vacancy" },
+        { "badge": "code", "name": "Web Developer", "count": "100 Job Vacancy" },
+        { "badge": "camera", "name": "Video Animator", "count": "100 Job Vacancy" },
+        { "badge": "megaphone", "name": "Graphic Illustrator", "count": "100 Job Vacancy" }
+      ]
     }
   }
 }

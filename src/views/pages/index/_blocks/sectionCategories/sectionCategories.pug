@@ -1,0 +1,79 @@
+mixin sectionCategories(props = {})
+  - const rootClassName = "section-categories";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const heading = props.heading || "";
+  - const items = props.items || [];
+  -
+    const classes = [
+      rootClassName,
+      className,
+      "py-48",
+      "lg:py-40",
+      "md:py-32",
+      "sm:py-16"
+    ];
+
+  // Start: [Section: categories] 
+  section(
+    class = classes 
+    style = style
+  )
+    
+    // Start: [Container] 
+    +container()
+      
+      // Start: [Grid] 
+      +grid({class: "justify-content-center"})
+
+        // Start: [Column 12] 
+        +column({class: "column-12"})
+          +sectionHeading({
+            class: [
+              "text-align-center", 
+              "lg:text-align-left",
+              "mb-44", 
+              "md:mb-24"
+            ],
+            heading: heading
+          })
+        // End: [Column 12] 
+      // End: [Grid] 
+    // End: [Container]
+
+    // Start: [Container] 
+    +container()
+      
+      // Start: [Grid] 
+      +grid()
+
+        each item, index in items
+          // Start: [Column 3] 
+          +column({class: ["column-3", "lg:column-6", "sm:column-12"]})
+            +box({class: [
+              "category-item",
+              "py-24",
+              "px-24",
+              "xl:px-20",
+              items.length !== index + 1 ? "lg:mb-20" : null
+            ]})
+              div(
+                class = ["category-item__badge", "mb-24"]
+                style = `background-image: url(${require(`../../../assets/images/badge-${item.badge}.svg`)})`
+              )
+              +typography({
+                class: ["category-item__name", "mb-8"],
+                as: "p",
+                variant: "h3"
+              })
+                | #{item.name}
+              +typography({
+                class: "category-item__count",
+                as: "span",
+                variant: "body-small"
+              })
+                | #{item.count}
+          // End: [Column 3] 
+      // End: [Grid] 
+    // End: [Container] 
+  // End: [Section: categories] 
