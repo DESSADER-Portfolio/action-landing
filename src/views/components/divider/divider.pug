@@ -1,0 +1,19 @@
+mixin divider(props = {})
+  - const directions = ["horizontal", "vertical"];
+
+  - const rootClassName = "divider";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const direction = directions.includes(props.direction) ? props.direction : directions[0];
+  -
+    const classes = [
+      rootClassName,
+      {[`${rootClassName}:direction-${direction}`]: direction},
+      className
+    ];
+
+  div(
+    class = classes 
+    style = style
+  )
+    block

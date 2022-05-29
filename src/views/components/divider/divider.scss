@@ -1,0 +1,15 @@
+$root-class: "divider";
+
+.#{$root-class} {
+  background: $light-blue-300;
+
+  &\:direction-vertical {
+    width: 1px;
+    height: 100%;
+  }
+
+  &\:direction-horizontal {
+    width: 100%;
+    height: 1px;
+  }
+}
