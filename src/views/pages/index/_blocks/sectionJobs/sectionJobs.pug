@@ -1,0 +1,114 @@
+mixin sectionJobs(props = {})
+  - const rootClassName = "section-jobs";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const heading = props.heading || [];
+  - const description = props.description || "";
+  - const items = props.items || [];
+  - const buttonLabel = props.buttonLabel || "";
+  -
+    const classes = [
+      rootClassName,
+      className,
+      "py-48",
+      "lg:py-40",
+      "md:py-32",
+      "sm:py-16"
+    ];
+
+  // Start: [Section: jobs] 
+  section(
+    class = classes 
+    style = style
+  )
+    
+    // Start: [Container] 
+    +container()
+      
+      // Start: [Grid] 
+      +grid({class: "justify-content-center"})
+
+        // Start: [Column 6] 
+        +column({class: ["column-5", "lg:column-12"]})
+          +sectionHeading({
+            class: [
+              "text-align-center", 
+              "lg:text-align-left",
+              "mb-44", 
+              "md:mb-24"
+            ],
+            heading: heading,
+            description: description
+          })
+        // End: [Column 6] 
+      // End: [Grid] 
+    // End: [Container]
+
+    // Start: [Container] 
+    +container()
+      
+      // Start: [Grid] 
+      +grid()
+
+        each item, index in items
+          // Start: [Column 4] 
+          +column({class: ["column-4", "lg:column-6", "sm:column-12"]})
+            +box({class: [
+              "job-item",
+              "py-28",
+              "px-28",
+              "md:py-20",
+              "md:px-20",
+              items.length !== index + 1 ? "mb-20" : null
+            ]})
+              +typography({
+                class: ["job-item__title", "mb-20"],
+                as: "p",
+                variant: "h3"
+              })
+                | #{item.title}
+              +stack({class: "job-item__details"})
+                +stack({class: ["align-items-center", "mr-12"]})
+                  +icon({class: "mr-4", icon: "map-point"})
+                  +typography({
+                    as: "span",
+                    variant: "body-small"
+                  })
+                    | #{item.location}
+                +stack({class: "align-items-center"}) 
+                  +icon({class: "mr-4", icon: "clock"})
+                  +typography({
+                    as: "span",
+                    variant: "body-small"
+                  })
+                    | #{item.employment}
+              +divider({class: "my-20"})
+              +stack({class: ["align-items-center", "justify-content-space-between"]})
+                div(
+                  class = "job-item__logo"
+                  style = `background-image: url(${require(`../../../assets/images/logo-${item.logo}.svg`)})`
+                )
+                +typography({
+                  class: "job-item__date",
+                  as: "span",
+                  variant: "body-small"
+                })
+                  | #{item.date}
+          // End: [Column 4] 
+      // End: [Grid] 
+    // End: [Container]
+
+    // Start: [Container]
+    +container()
+
+      // Start: [Stack] 
+      +stack({class: ["justify-content-center", "py-20"]})
+        +button({
+          as: "a",
+          link: "#", 
+          variant: "primary-orange", 
+          label: buttonLabel
+        })
+      // End: [Stack] 
+    // End: [Container] 
+  // End: [Section: jobs] 

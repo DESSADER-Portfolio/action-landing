@@ -38,6 +38,55 @@
         { "badge": "camera", "name": "Video Animator", "count": "100 Job Vacancy" },
         { "badge": "megaphone", "name": "Graphic Illustrator", "count": "100 Job Vacancy" }
       ]
+    },
+    "jobs": {
+      "heading": ["Find your job"],
+      "description": "Search and find your dream job is now easier than ever. Just browse a job and apply if you need to.",
+      "items": [
+        { 
+          "title": "Senior Designer-Mobile Apps Team",
+          "location": "Bankok",
+          "employment": "Full-time",
+          "logo": "peopleperhour",
+          "date": "2 days ago"
+        },
+        { 
+          "title": "Senior Designer-Web Apps Team",
+          "location": "Bankok",
+          "employment": "Full-time",
+          "logo": "upwork",
+          "date": "2 days ago"
+        },
+        { 
+          "title": "Graphic Designer- Illustrations expert",
+          "location": "Bankok",
+          "employment": "Full-time",
+          "logo": "guru",
+          "date": "2 days ago"
+        },
+        { 
+          "title": "Junior designer Developer- Front End",
+          "location": "Bankok",
+          "employment": "Full-time",
+          "logo": "upwork",
+          "date": "2 days ago"
+        },
+        { 
+          "title": "Digital Marketing- Web SEO Expert",
+          "location": "Bankok",
+          "employment": "Full-time",
+          "logo": "freelancer",
+          "date": "2 days ago"
+        },
+        { 
+          "title": "Senior Designer-Mobile Apps Team",
+          "location": "Bankok",
+          "employment": "Full-time",
+          "logo": "upwork",
+          "date": "2 days ago"
+        }
+      ],
+      "buttonLabel": "Show all jobs"
     }
   }
 }

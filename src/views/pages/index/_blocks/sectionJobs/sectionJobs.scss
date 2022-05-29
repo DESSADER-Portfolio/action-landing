@@ -1,0 +1,23 @@
+$root-class: "section-jobs";
+
+.#{$root-class} {
+  .job-item {
+    &__details,
+    &__date {
+      color: $light-blue-700;
+
+      .icon {
+        fill: $light-blue-700;
+      }
+    }
+
+    &__logo {
+      display: flex;
+      flex: 0 0 auto;
+      width: 44px;
+      height: 44px;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+}
