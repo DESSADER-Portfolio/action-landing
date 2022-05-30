@@ -16,7 +16,7 @@ mixin textField(props = {})
     style = style
   )
     input(
-      class = `${rootClassName}__control`
+      class = ["base-input-field", `${rootClassName}__control`]
       type = type
       value = value
       placeholder = placeholder
