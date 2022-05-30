@@ -5,6 +5,7 @@ mixin textField(props = {})
   - const type = props.type || "text";
   - const value = props.value || "";
   - const placeholder = props.placeholder || "";
+  - const icon = props.icon || null;
   -
     const classes = [
       rootClassName,
@@ -15,6 +16,9 @@ mixin textField(props = {})
     class = classes 
     style = style
   )
+    if icon
+      div(class = `${rootClassName}__icon`)
+        +icon({icon: icon})
     input(
       class = ["base-input-field", `${rootClassName}__control`]
       type = type
