@@ -1,8 +1,6 @@
 $root-class: "divider";
 
 .#{$root-class} {
-  background: $light-blue-300;
-
   &\:direction-vertical {
     width: 1px;
     height: 100%;
@@ -11,5 +9,13 @@ $root-class: "divider";
   &\:direction-horizontal {
     width: 100%;
     height: 1px;
+  }
+
+  &\:variant-light {
+    background: $light-blue-300;
+  }
+
+  &\:variant-dark {
+    background: $dark-blue-400;
   }
 }
