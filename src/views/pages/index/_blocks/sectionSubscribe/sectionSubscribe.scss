@@ -1,0 +1,14 @@
+$root-class: "section-subscribe";
+
+.#{$root-class} {
+  &__form {
+    gap: 12px;
+  }
+
+  @include breakpoint(sm) {
+    &__wrapper {
+      margin: 0 -20px;
+      border-radius: 0;
+    }
+  }
+}

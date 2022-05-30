@@ -1,0 +1,66 @@
+mixin sectionSubscribe(props = {})
+  - const rootClassName = "section-subscribe";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const heading = props.heading || [];
+  - const description = props.description || "";
+  - const inputPlaceholder = props.inputPlaceholder || "";
+  - const buttonLabel = props.buttonLabel || "";
+  -
+    const classes = [
+      rootClassName,
+      className,
+      "pt-0",
+      "pb-92",
+      "lg:pb-44",
+      "sm:pb-24"
+    ];
+
+  // Start: [Section: subscribe]
+  section(
+    class = classes 
+    style = style
+  )
+
+    // Start: [Container] 
+    +container()
+
+      // Start: [Box: wrapper]
+      +box({
+        class: [
+          `${rootClassName}__wrapper`,
+          "py-64", 
+          "px-64",
+          "sm:py-20",
+          "sm:px-20"
+        ],
+        variant: "filled",
+        radius: "md"
+      })
+
+        // Start: [Grid] 
+        +grid({class: "justify-content-center"})
+
+          // Start: [Column 6] 
+          +column({class: ["column-6", "xl:column-8", "lg:column-12"]})
+            +sectionHeading({
+              class: [
+                "text-align-center", 
+                "lg:text-align-left", 
+                "mb-24", 
+                "sm:mb-12"
+              ],
+              heading: heading,
+              description: description
+            })
+
+            // Start: [Stack: form] 
+            +stack({class: [`${rootClassName}__form`, "sm:flex-direction-column"]})
+              +textField({placeholder: inputPlaceholder})
+              +button({label: buttonLabel, variant: "primary-dark"})
+            // End: [Stack: form] 
+          // End: [Column 6] 
+        // End: [Grid] 
+      // End: [Box: wrapper] 
+    // End: [Container] 
+  // End: [Section: subscribe] 

@@ -87,6 +87,12 @@
         }
       ],
       "buttonLabel": "Show all jobs"
+    },
+    "subscribe": {
+      "heading": ["Get update about job"],
+      "description": "Subscribe our newsletter for getting the update of suitable and perfect jobs. Your dream job is here.",
+      "inputPlaceholder": "Email address",
+      "buttonLabel": "Subscribe"
     }
   }
 }
