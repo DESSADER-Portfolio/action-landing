@@ -1,10 +1,17 @@
 mixin box(props = {})
+  - const variants = ["outline", "filled"];
+  - const radiuses = ["sm", "md"];
+
   - const rootClassName = "box";
   - const className = props.class || null;
   - const style = props.style || null;
+  - const variant = variants.includes(props.variant) ? props.variant : variants[0];
+  - const radius = radiuses.includes(props.radius) ? props.radius : radiuses[0];
   -
     const classes = [
       rootClassName,
+      {[`${rootClassName}:variant-${variant}`]: variant},
+      {[`${rootClassName}:radius-${radius}`]: radius},
       className
     ];
 
