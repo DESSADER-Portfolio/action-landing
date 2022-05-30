@@ -1,11 +1,15 @@
 mixin logo(props = {})
+  - const variants = ["dark", "light"];
+
   - const rootClassName = "logo";
   - const className = props.class || null;
   - const style = props.style || null;
   - const link = props.link || "/";
+  - const variant = variants.includes(props.variant) ? props.variant : variants[0];
   -
     const classes = [
       rootClassName,
+      {[`${rootClassName}:variant-${variant}`]: variant},
       className
     ];
 
