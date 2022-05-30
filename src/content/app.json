@@ -18,6 +18,11 @@
       ]
     },
     "footer": {
+      "social": [
+        { "title": "facebook", "link": "#" },
+        { "title": "twitter", "link": "#" },
+        { "title": "linkedin", "link": "#" }
+      ],
       "menu": {
         "Community": [
           { "label": "Job Board", "link": "#" },
@@ -43,7 +48,7 @@
           { "label": "Online Test", "link": "#" }
         ]
       },
-      "copyright": ""
+      "copyright": "© 2022 Design by: <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://webdesign.gdn/product/social-media-management-landing-page/\">webdesign.gdn</a> | Developed by <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://www.upwork.com/freelancers/~01e8b1e03960b082d8\">DESSADER</a>"
     }
   }
 }

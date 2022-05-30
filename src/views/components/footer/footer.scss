@@ -1,0 +1,46 @@
+$root-class: "footer";
+
+.#{$root-class} {
+  background: $dark-blue-500;
+  color: $neutral-white;
+
+  &__social-links {
+    gap: 6px;
+  }
+
+  &__social-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 4px;
+    background: $dark-blue-400;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      fill: $neutral-white;
+    }
+
+    &:hover {
+      background: $orange-500;
+    }
+  }
+
+  &__nav {
+    gap: 24px;
+  }
+
+  &__nav-link {
+    color: $light-blue-500;
+    line-height: 28px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__copyright,
+  &__copyright a {
+    color: $light-blue-600;
+  }
+}

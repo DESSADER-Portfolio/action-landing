@@ -1,0 +1,82 @@
+mixin footer(props = {})
+  - const rootClassName = "footer";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const social = props.social || [];
+  - const menuGroups = props.menuGroups || [];
+  - const copyright = props.copyright || [];
+  -
+    const classes = [
+      rootClassName,
+      className,
+      "py-64",
+      "sm:py-32"
+    ];
+
+  footer(
+    class = classes 
+    style = style
+  )
+
+    // Start: [Container] 
+    +container()
+      
+      // Start: [Grid] 
+      
+      +grid({class: "justify-content-space-between"})
+
+        // Start: [Column 3] 
+        +column({class: ["column-3", "md:column-12"]})
+          +logo({class: "mb-12", variant: "light"})
+          +stack({class: [`${rootClassName}__social-links`, "md:mb-24"]})
+            each item in social
+              a(
+                class = [
+                  `${rootClassName}__social-link`,
+                  "display-flex",
+                  "align-items-center",
+                  "justify-content-center"
+                ] 
+                href = item.link
+              )
+                +icon({icon: item.title})
+        // End: [Column 3] 
+
+        // Start: [Column 8] 
+        +column({class: ["column-8", "md:column-12"]})
+          nav(
+            class = [
+              `${rootClassName}__nav`, 
+              "display-flex", 
+              "justify-content-space-between",
+              "md:justify-content-flex-start",
+              "sm:flex-direction-column",
+              "flex-wrap-wrap"
+            ]
+          )
+            each menu, groupTitle in menuGroups
+              // Start: [nav group] 
+              ul(class = `${rootClassName}__nav-group`)
+                +typography({
+                  class: [`${rootClassName}__nav-title`, "mb-4"],
+                  variant: "body-default",
+                  weight: "semibold"
+                }) #{groupTitle}
+                each item in menu
+                  li(class = `${rootClassName}__nav-item`)
+                    a(class = `${rootClassName}__nav-link` href = item.link) #{item.label}
+              // End: [nav group] 
+        // End: [Column 8] 
+      // End: [Grid] 
+    // End: [Container]
+
+    // Start: [Container] 
+    +container()
+
+      +divider({class: "my-24", variant: "dark"})
+
+      // Start: [Stack] 
+      +stack()
+        +typography({class: `${rootClassName}__copyright`}) !{copyright}
+      // End: [Stack] 
+    // End: [Container] 
