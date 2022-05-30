@@ -1,0 +1,28 @@
+mixin selectField(props = {})
+  - const rootClassName = "select-field";
+  - const className = props.class || null;
+  - const style = props.style || null;
+  - const placeholder = props.placeholder || "";
+  - const icon = props.icon || null;
+  - const options = props.options || [];
+  -
+    const classes = [
+      rootClassName,
+      className
+    ];
+
+  div(
+    class = classes
+    style = style
+  )
+    if icon
+      div(class = `${rootClassName}__icon`)
+        +icon({icon: icon})
+    div(class = ["base-input-field", `${rootClassName}__control`])
+      span(class = `${rootClassName}__placeholder`) #{placeholder}
+    div(class = `${rootClassName}__button`)
+      +button({icon: "chevron-down"})
+
+    ul(class = `${rootClassName}__list`)
+      each item in options
+        li(class = `${rootClassName}__list-item`, data-value = item.value) #{item.label}

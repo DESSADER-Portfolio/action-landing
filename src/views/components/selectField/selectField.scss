@@ -1,0 +1,86 @@
+$root-class: "select-field";
+
+.#{$root-class} {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+
+  &__icon,
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $neutral-white;
+  }
+
+  &__icon {
+    padding: 12px 8px 12px 12px;
+    border-radius: 12px 0 0 12px;
+
+    .icon {
+      fill: $dark-blue-300;
+    }
+  }
+
+  &__icon + &__control {
+    padding: 12px 0;
+    border-radius: 0;
+  }
+
+  &__control {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px 0 0 12px;
+  }
+
+  &__button {
+    padding: 12px 8px;
+    border-radius: 0 12px 12px 0;
+
+    .button {
+      padding: 0;
+      border-color: transparent;
+
+      .icon {
+        fill: $light-blue-500;
+      }
+    }
+  }
+
+  &__placeholder {
+    color: $light-blue-500;
+  }
+
+  &__list {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    z-index: 999;
+    display: none;
+    width: 100%;
+    padding: 8px;
+    border-radius: 12px;
+    background: $neutral-white;
+    box-shadow: 0 10px 30px -3px rgba(0 0 0 / 6%);
+    opacity: 0;
+    transform: translateY(-30px);
+    transform-origin: top center;
+  }
+
+  &__list-item {
+    padding: 12px;
+    border-radius: 8px;
+    color: $light-blue-800;
+    font-size: 14px;
+
+    &:hover {
+      background: $light-blue-050;
+    }
+
+    &.selected {
+      background: $orange-500;
+      color: $neutral-white;
+    }
+  }
+}
