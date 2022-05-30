@@ -10,6 +10,10 @@ $root-class: "section-intro";
     color: $light-blue-800;
   }
 
+  &__form {
+    gap: 12px;
+  }
+
   &__illustration {
     width: 100%;
     height: 420px;

@@ -31,8 +31,8 @@ mixin sectionIntro(props = {})
         // Start: [Grid] 
         +grid({class: ["align-items-center", "lg:flex-direction-column-reverse"]})
           
-          // Start: [Column 6] 
-          +column({class: ["column-6", "lg:column-12"]})
+          // Start: [Column 7] 
+          +column({class: ["column-7", "lg:column-12"]})
             +typography({
               class: [`${rootClassName}__heading`, "mb-16"],
               as: "h1",
@@ -42,18 +42,37 @@ mixin sectionIntro(props = {})
                 span
                   span #{str}
             +typography({
-              class: `${rootClassName}__description`,
+              class: `${rootClassName}__description mb-24`,
               as: "p", 
               variant: "body-large"
             })
               | #{description}
-          // End: [Column 6]
 
-          // Start: [Column 6] 
-          +column({class: ["column-6", "lg:display-none"]})
+            // Start: [Stack: form] 
+            +stack({class: [`${rootClassName}__form`, "md:flex-direction-column"]})
+              +textField({placeholder: "Job title", icon: "dock-search"})
+              +selectField({
+                placeholder: "City", 
+                icon: "map-point",
+                options: [
+                  { label: "Option 1", value: "option-1" },
+                  { label: "Option 2", value: "option-2" },
+                  { label: "Option 3", value: "option-3" }
+                ]
+              })
+              +button({
+                icon: "search", 
+                variant: "primary-orange", 
+                label: "Search"
+              })
+            // End: [Stack: form] 
+          // End: [Column 7]
+
+          // Start: [Column 5] 
+          +column({class: ["column-5", "lg:display-none"]})
             div(class = `${rootClassName}__illustration`)
             
-          // End: [Column 6] 
+          // End: [Column 5] 
         // End: [Grid] 
       // End: [Stack: wrapper] 
     // End: [Container] 
