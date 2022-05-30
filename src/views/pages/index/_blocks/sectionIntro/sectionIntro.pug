@@ -19,14 +19,18 @@ mixin sectionIntro(props = {})
     // Start: [Container] 
     +container()
 
-      // Start: [Stack: wrapper] 
-      div(class = [
-        `${rootClassName}__wrapper`, 
-        "py-64", 
-        "px-64",
-        "sm:py-20",
-        "sm:px-20"
-      ])
+      // Start: [Box: wrapper] 
+      +box({
+        class: [
+          `${rootClassName}__wrapper`,
+          "py-64", 
+          "px-64",
+          "sm:py-20",
+          "sm:px-20"
+        ],
+        variant: "filled",
+        radius: "md"
+      })
 
         // Start: [Grid] 
         +grid({class: ["align-items-center", "lg:flex-direction-column-reverse"]})
@@ -74,6 +78,6 @@ mixin sectionIntro(props = {})
             
           // End: [Column 5] 
         // End: [Grid] 
-      // End: [Stack: wrapper] 
+      // End: [Box: wrapper] 
     // End: [Container] 
   // End: [Section: intro] 

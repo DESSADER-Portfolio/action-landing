@@ -1,11 +1,6 @@
 $root-class: "section-intro";
 
 .#{$root-class} {
-  &__wrapper {
-    border-radius: 24px;
-    background: $light-blue-050;
-  }
-
   &__description {
     color: $light-blue-800;
   }
