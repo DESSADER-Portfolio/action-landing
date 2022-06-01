@@ -8,6 +8,9 @@
 @include create-flex-helper();
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background: $neutral-white;
   color: $dark-blue-500;
   font-family: $font-family;
@@ -17,6 +20,14 @@ body {
   &.no-scroll {
     overflow: hidden;
   }
+}
+
+.app-layout-content {
+  flex: 1 0 auto;
+}
+
+.app-layout-footer {
+  flex: 0 0 auto;
 }
 
 .base-input-field {
