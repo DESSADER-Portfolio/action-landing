@@ -65,8 +65,8 @@ class SelectField implements ISelectField {
       display: "block",
       opacity: 1,
       transform: "translateY(0)",
-      duration: 0.2,
-      ease: "back"
+      duration: 0.15,
+      ease: "expoOut"
     });
   }
 
@@ -76,8 +76,8 @@ class SelectField implements ISelectField {
       display: "none",
       opacity: 0,
       transform: "translateY(-30px)",
-      duration: 0.2,
-      ease: "back"
+      duration: 0.15,
+      ease: "expoOut"
     });
   }
 
