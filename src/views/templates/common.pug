@@ -28,7 +28,12 @@ html(lang="ru")
 
     block title
     
-  body(classs = rootClass)
+  body(class = [rootClassName, "no-scroll"])
+
+    // Start: [Preloader] 
+    +preloader({style: "display: flex"})
+
+    // End: [Preloader] 
 
     // Start: [Navbar]
     +navbar({
