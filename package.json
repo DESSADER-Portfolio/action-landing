@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "cross-env mode=development webpack serve --config _webpack/init.js",
-    "build": "cross-env mode=production webpack --config _webpack/init.js && yarn format:html",
+    "build": "cross-env mode=production webpack --config _webpack/init.js && yarn cleancss && yarn format:html",
     "build:debug": "cross-env mode=development webpack --config _webpack/init.js && yarn format:html",
     "lint:scripts": "eslint ./src",
     "lint:scripts:fix": "eslint ./src --fix",
