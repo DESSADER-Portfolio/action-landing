@@ -46,6 +46,12 @@ class SelectField implements ISelectField {
     this.options.forEach((option) => {
       option.addEventListener("click", () => this.setValue(option));
     });
+
+    document.addEventListener("click", (e: MouseEvent) => {
+      if(!this.select.contains(e.target as Node)) {
+        this.close();
+      }
+    });
   }
 
   public setValue(option: HTMLLIElement) {
