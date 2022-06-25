@@ -16,16 +16,15 @@ mixin sectionSubscribe(props = {})
       "sm:pb-24"
     ];
 
-  // Start: [Section: subscribe]
   section(
     class = classes 
     style = style
   )
 
-    // Start: [Container] 
+    // Start: [container] 
     +container()
 
-      // Start: [Box: wrapper]
+      // Start: [box/section-subscribe__wrapper]
       +box({
         class: [
           `${rootClassName}__wrapper`,
@@ -38,11 +37,20 @@ mixin sectionSubscribe(props = {})
         radius: "md"
       })
 
-        // Start: [Grid] 
+        // Start: [grid] 
         +grid({class: "justify-content-center"})
 
-          // Start: [Column 6] 
-          +column({class: ["column-6", "xl:column-8", "lg:column-12"]})
+          // Start: [column-6] 
+
+          +column({
+            class: [
+              "column-6",
+              "xl:column-8",
+              "lg:column-12"
+            ]
+          })
+
+            // Start: [section-heading] 
             +sectionHeading({
               class: [
                 "text-align-center", 
@@ -53,14 +61,25 @@ mixin sectionSubscribe(props = {})
               heading: heading,
               description: description
             })
+            // End: [section-heading] 
 
-            // Start: [Stack: form] 
-            +stack({class: [`${rootClassName}__form`, "sm:flex-direction-column"]})
+            // Start: [stack/section-subscribe__form] 
+            +stack({
+              class: [
+                `${rootClassName}__form`,
+                "sm:flex-direction-column"
+              ]
+            })
+              
+              // Start: [text-field] 
               +textField({placeholder: inputPlaceholder})
+              // End: [text-field] 
+              
+              // Start: [button] 
               +button({label: buttonLabel, variant: "primary-dark"})
-            // End: [Stack: form] 
-          // End: [Column 6] 
-        // End: [Grid] 
-      // End: [Box: wrapper] 
-    // End: [Container] 
-  // End: [Section: subscribe] 
+              // End: [button] 
+            // End: [stack/section-subscribe__form] 
+          // End: [column-6] 
+        // End: [grid] 
+      // End: [box/section-subscribe__wrapper] 
+    // End: [container]

@@ -10,38 +10,50 @@ block title
   
 block content
 
+  // Start: [section-intro] 
   +sectionIntro({
     heading: content.sections.intro.heading,
     description: content.sections.intro.description
-  })
+  }) 
+  // End: [section-intro] 
 
+  // Start: [section-features] 
   +sectionFeatures({
     heading: content.sections.features.heading,
     description: content.sections.features.description,
     items: content.sections.features.items
   })
+  // End: [section-features] 
 
+  // Start: [section-about] 
   +sectionAbout({
     heading: content.sections.about.heading,
     description: content.sections.about.description,
     items: content.sections.about.items
   })
+  // End: [section-about] 
 
+  // Start: [section-categories] 
   +sectionCategories({
     heading: content.sections.categories.heading,
     items: content.sections.categories.items
   })
+  // End: [section-categories] 
 
+  // Start: [section-jobs] 
   +sectionJobs({
     heading: content.sections.jobs.heading,
     description: content.sections.jobs.description,
     items: content.sections.jobs.items,
     buttonLabel: content.sections.jobs.buttonLabel
   })
+  // End: [section-jobs] 
   
+  // Start: [section-subscribe] 
   +sectionSubscribe({
     heading: content.sections.subscribe.heading,
     description: content.sections.subscribe.description,
     inputPlaceholder: content.sections.subscribe.inputPlaceholder,
     buttonLabel: content.sections.subscribe.buttonLabel
   })
+  // End: [section-subscribe] 

@@ -15,4 +15,8 @@ mixin nav(props = {})
   )
     each item in items
       li(class = `${rootClassName}__item`)
-        a(class = `${rootClassName}__link` href = item.link) #{item.label}
+        a(
+          class = `${rootClassName}__link`
+          href = item.link
+        ) 
+          | #{item.label}

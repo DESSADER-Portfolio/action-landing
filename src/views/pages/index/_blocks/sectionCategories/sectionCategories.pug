@@ -14,20 +14,21 @@ mixin sectionCategories(props = {})
       "sm:py-16"
     ];
 
-  // Start: [Section: categories] 
   section(
     class = classes 
     style = style
   )
     
-    // Start: [Container] 
+    // Start: [container] 
     +container()
       
-      // Start: [Grid] 
+      // Start: [grid] 
       +grid({class: "justify-content-center"})
 
-        // Start: [Column 12] 
+        // Start: [column-12] 
         +column({class: "column-12"})
+
+          // Start: [section-heading] 
           +sectionHeading({
             class: [
               "text-align-center", 
@@ -37,32 +38,52 @@ mixin sectionCategories(props = {})
             ],
             heading: heading
           })
-        // End: [Column 12] 
-      // End: [Grid] 
-    // End: [Container]
+          // End: [section-heading] 
+        // End: [column-12] 
+      // End: [grid] 
+    // End: [container]
 
-    // Start: [Container] 
+    // Start: [container] 
     +container()
       
-      // Start: [Grid] 
+      // Start: [grid] 
       +grid()
 
         each item, index in items
-          // Start: [Column 3] 
-          +column({class: ["column-3", "lg:column-6", "sm:column-12"]})
-            +box({class: [
-              "category-item",
-              "py-24",
-              "px-24",
-              "xl:px-20",
-              items.length !== index + 1 ? "lg:mb-20" : null
-            ]})
+
+          // Start: [column-3] 
+          +column({
+            class: [
+              "column-3",
+              "lg:column-6",
+              "sm:column-12"
+            ]
+          })
+
+            // Start: [box/category-item] 
+            +box({
+              class: [
+                "category-item",
+                "py-24",
+                "px-24",
+                "xl:px-20",
+                items.length !== index + 1 
+                  ? "lg:mb-20" 
+                  : null
+              ]
+            })
               div(
-                class = ["category-item__badge", "mb-24"]
+                class = [
+                  "category-item__badge",
+                  "mb-24"
+                ]
                 style = `background-image: url(${require(`../../../assets/images/badge-${item.badge}.svg`)})`
               )
               +typography({
-                class: ["category-item__name", "mb-8"],
+                class: [
+                  "category-item__name",
+                  "mb-8"
+                ],
                 as: "p",
                 variant: "h3"
               })
@@ -73,7 +94,7 @@ mixin sectionCategories(props = {})
                 variant: "body-small"
               })
                 | #{item.count}
-          // End: [Column 3] 
-      // End: [Grid] 
-    // End: [Container] 
-  // End: [Section: categories] 
+            // End: [box/category-item] 
+          // End: [column-3] 
+      // End: [grid] 
+    // End: [container] 

@@ -18,17 +18,30 @@ mixin footer(props = {})
     style = style
   )
 
-    // Start: [Container] 
+    // Start: [container] 
     +container()
       
-      // Start: [Grid] 
-      
+      // Start: [grid] 
       +grid({class: "justify-content-space-between"})
 
-        // Start: [Column 3] 
-        +column({class: ["column-3", "md:column-12"]})
-          +logo({class: "mb-12", variant: "light"})
-          +stack({class: [`${rootClassName}__social-links`, "md:mb-24"]})
+        // Start: [column-3] 
+        +column({
+          class: [
+            "column-3",
+            "md:column-12"
+          ]
+        })
+          +logo({
+            class: "mb-12",
+            variant: "light"
+          })
+          // Start: [stack/footer__social-links] 
+          +stack({
+            class: [
+              `${rootClassName}__social-links`,
+              "md:mb-24"
+            ]
+          })
             each item in social
               a(
                 class = [
@@ -40,10 +53,18 @@ mixin footer(props = {})
                 href = item.link
               )
                 +icon({icon: item.title})
-        // End: [Column 3] 
+          // End: [stack/footer__social-links] 
+        // End: [column-3] 
 
-        // Start: [Column 8] 
-        +column({class: ["column-8", "md:column-12"]})
+        // Start: [column-8] 
+        +column({
+          class: [
+            "column-8",
+            "md:column-12"
+          ]
+        })
+
+          // Start: [footer__nav] 
           nav(
             class = [
               `${rootClassName}__nav`, 
@@ -55,28 +76,39 @@ mixin footer(props = {})
             ]
           )
             each menu, groupTitle in menuGroups
-              // Start: [nav group] 
+              // Start: [footer__nav-group] 
               ul(class = `${rootClassName}__nav-group`)
                 +typography({
-                  class: [`${rootClassName}__nav-title`, "mb-4"],
+                  class: [
+                    `${rootClassName}__nav-title`,
+                    "mb-4"
+                  ],
                   variant: "body-default",
                   weight: "semibold"
                 }) #{groupTitle}
                 each item in menu
                   li(class = `${rootClassName}__nav-item`)
-                    a(class = `${rootClassName}__nav-link` href = item.link) #{item.label}
-              // End: [nav group] 
-        // End: [Column 8] 
-      // End: [Grid] 
-    // End: [Container]
+                    a(
+                      class = `${rootClassName}__nav-link` 
+                      href = item.link
+                    ) #{item.label}
+              // End: [footer__nav-group] 
+          // End: [footer__nav] 
+        // End: [column-8] 
+      // End: [grid] 
+    // End: [container]
 
-    // Start: [Container] 
+    // Start: [container] 
     +container()
 
-      +divider({class: "my-24", variant: "dark"})
+      +divider({
+        class: "my-24", 
+        variant: "dark"
+      })
 
-      // Start: [Stack] 
+      // Start: [stack] 
       +stack()
-        +typography({class: `${rootClassName}__copyright`}) !{copyright}
-      // End: [Stack] 
-    // End: [Container] 
+        +typography({class: `${rootClassName}__copyright`}) 
+          | !{copyright}
+      // End: [stack] 
+    // End: [container]

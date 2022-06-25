@@ -18,11 +18,21 @@ mixin selectField(props = {})
     if icon
       div(class = `${rootClassName}__icon`)
         +icon({icon: icon})
-    div(class = ["base-input-field", `${rootClassName}__control`])
-      span(class = `${rootClassName}__placeholder`) #{placeholder}
+    div(
+      class = [
+        "base-input-field", 
+        `${rootClassName}__control`
+      ]
+    )
+      span(class = `${rootClassName}__placeholder`) 
+        | #{placeholder}
     div(class = `${rootClassName}__button`)
       +button({icon: "chevron-down"})
 
     ul(class = `${rootClassName}__list`)
       each item in options
-        li(class = `${rootClassName}__list-item`, data-value = item.value) #{item.label}
+        li(
+          class = `${rootClassName}__list-item`, 
+          data-value = item.value
+        ) 
+          | #{item.label}

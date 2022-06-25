@@ -24,7 +24,11 @@ mixin sectionHeading(props = {})
           span #{str}
     if description
       +typography({
-        class: [`${rootClassName}__description`, "mt-16", "sm:mt-4"],
+        class: [
+          `${rootClassName}__description`, 
+          "mt-16",
+          "sm:mt-4"
+        ],
         as: "p", 
         variant: "body-default"
       }) 

@@ -20,7 +20,10 @@ mixin textField(props = {})
       div(class = `${rootClassName}__icon`)
         +icon({icon: icon})
     input(
-      class = ["base-input-field", `${rootClassName}__control`]
+      class = [
+        "base-input-field", 
+        `${rootClassName}__control`
+      ]
       type = type
       value = value
       placeholder = placeholder

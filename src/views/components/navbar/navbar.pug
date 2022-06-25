@@ -17,31 +17,61 @@ mixin navbar(props = {})
     class = classes 
     style = style
   )
-    // Start: [Container] 
+    // Start: [container] 
     +container()
       
-      // Start: [Stack] 
-      +stack({class: ["justify-content-space-between", "align-items-center"]})
+      // Start: [stack] 
+      +stack({
+        class: [
+          "justify-content-space-between",
+          "align-items-center"
+        ]
+      })
         +logo()
         
-        // Start: [Menu]
-        div(class = ["menu", "display-flex", "align-items-center"])
-          +nav({class: ["mr-44", "lg:mr-0","lg:mb-32"], items: menuItems})
-          div(class = [
-            "extra", 
+        // Start: [menu]
+        div(
+          class = [
+            "menu", 
             "display-flex", 
-            "sm:flex-direction-column",
-            "sm:px-24",
-          ])
+            "align-items-center"
+          ]
+        )
+
+          // Start: [nav] 
+          +nav({
+            class: [
+              "mr-44", 
+              "lg:mr-0",
+              "lg:mb-32"
+            ], 
+            items: menuItems
+          })
+          // End: [nav]
+
+          // Start: [stack/extra] 
+          +stack({
+            class: [
+              "extra",
+              "sm:flex-direction-column",
+              "sm:px-24"
+            ]
+          })
             each item in extraItems
-              +button({label: item.label, variant: item.variant})
+              // Start: [button]
+              +button({
+                label: item.label, 
+                variant: item.variant
+              }) 
+              // End: [button] 
+          // End: [stack/extra] 
+        // End: [menu] 
 
-        // End: [Menu] 
-
+        // Start: [button] 
         button(class = "menu-control")
           span
           span
           span
-
-      // End: [Stack] 
-    // End: [Container] 
+        // End: [button] 
+      // End: [stack] 
+    // End: [container] 

@@ -15,19 +15,25 @@ mixin sectionFeatures(props = {})
       "sm:py-32"
     ];
 
-  // Start: [Section: features]
   section(
     class = classes 
     style = style
   ) 
-    // Start: [Container] 
+    // Start: [container] 
     +container()
       
-      // Start: [Grid] 
+      // Start: [grid] 
       +grid({class: "justify-content-center"})
 
-        // Start: [Column 6] 
-        +column({class: ["column-6", "lg:column-12"]})
+        // Start: [column-6] 
+        +column({
+          class: [
+            "column-6",
+            "lg:column-12"
+          ]
+        })
+
+          // Start: [section-heading] 
           +sectionHeading({
             class: [
               "text-align-center", 
@@ -38,19 +44,28 @@ mixin sectionFeatures(props = {})
             heading: heading,
             description: description
           })
-        // End: [Column 6] 
-      // End: [Grid] 
-    // End: [Container]
+          // End: [section-heading] 
+        // End: [column-6] 
+      // End: [grid] 
+    // End: [container]
 
-    // Start: [Container] 
+    // Start: [container] 
     +container()
       
-      // Start: [Grid] 
+      // Start: [grid] 
       +grid()
 
         each item, index in items
-          // Start: [Column 4] 
-          +column({class: ["column-4", "md:column-12"]})
+
+          // Start: [column-4] 
+          +column({
+            class: [
+              "column-4", 
+              "md:column-12"
+            ]
+          })
+
+            // Start: [box/feature-item] 
             +box({class: [
               "feature-item",
               "display-flex",
@@ -61,7 +76,9 @@ mixin sectionFeatures(props = {})
               "px-64",
               "xl:px-12",
               "sm:py-12",
-              items.length !== index + 1 ? "md:mb-16" : null
+              items.length !== index + 1 
+                ? "md:mb-16" 
+                : null
             ]})
               div(
                 class = [
@@ -73,12 +90,16 @@ mixin sectionFeatures(props = {})
                 style = `background-image: url(${require(`../../../assets/images/badge-${item.badge}.svg`)})`
               )
               +typography({
-                class: ["feature-item__description", "text-align-center", "sm:text-align-left"],
+                class: [
+                  "feature-item__description",
+                  "text-align-center",
+                  "sm:text-align-left"
+                ],
                 as: "p",
                 variant: "h3"
               })
                 | #{item.description}
-          // End: [Column 4] 
-      // End: [Grid] 
-    // End: [Container] 
-  // End: [Section: features] 
+            // End: [box/feature-item] 
+          // End: [column-4] 
+      // End: [grid] 
+    // End: [container] 

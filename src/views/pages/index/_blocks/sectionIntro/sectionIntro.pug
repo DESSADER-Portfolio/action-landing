@@ -10,16 +10,15 @@ mixin sectionIntro(props = {})
       className
     ];
 
-  // Start: [Section: intro]
   section(
     class = classes 
     style = style
   )
 
-    // Start: [Container] 
+    // Start: [container] 
     +container()
 
-      // Start: [Box: wrapper] 
+      // Start: [box/section-intro__wrapper] 
       +box({
         class: [
           `${rootClassName}__wrapper`,
@@ -32,13 +31,26 @@ mixin sectionIntro(props = {})
         radius: "md"
       })
 
-        // Start: [Grid] 
-        +grid({class: ["align-items-center", "lg:flex-direction-column-reverse"]})
+        // Start: [grid] 
+        +grid({
+          class: [
+            "align-items-center",
+            "lg:flex-direction-column-reverse"
+          ]
+        })
           
-          // Start: [Column 7] 
-          +column({class: ["column-7", "lg:column-12"]})
+          // Start: [column-7] 
+          +column({
+            class: [
+              "column-7", 
+              "lg:column-12"
+            ]
+          })
             +typography({
-              class: [`${rootClassName}__heading`, "mb-16"],
+              class: [
+                `${rootClassName}__heading`,
+                "mb-16"
+              ],
               as: "h1",
               variant: "h1"
             })
@@ -46,15 +58,31 @@ mixin sectionIntro(props = {})
                 span
                   span #{str}
             +typography({
-              class: `${rootClassName}__description mb-24`,
+              class: [
+                `${rootClassName}__description`,
+                "mb-24"
+              ],
               as: "p", 
               variant: "body-large"
             })
               | #{description}
 
-            // Start: [Stack: form] 
-            +stack({class: [`${rootClassName}__form`, "md:flex-direction-column"]})
-              +textField({placeholder: "Job title", icon: "dock-search"})
+            // Start: [stack/section-intro__form] 
+            +stack({
+              class: [
+                `${rootClassName}__form`, 
+                "md:flex-direction-column"
+              ]
+            })
+
+              // Start: [text-field] 
+              +textField({
+                placeholder: "Job title",
+                icon: "dock-search"
+              })
+              // End: [text-field]
+   
+              // Start: [select-field] 
               +selectField({
                 placeholder: "City", 
                 icon: "map-point",
@@ -64,20 +92,27 @@ mixin sectionIntro(props = {})
                   { label: "Option 3", value: "option-3" }
                 ]
               })
+              // End: [select-field] 
+
+              // Start: [button] 
               +button({
                 icon: "search", 
                 variant: "primary-orange", 
                 label: "Search"
               })
-            // End: [Stack: form] 
-          // End: [Column 7]
+              // End: [button] 
+            // End: [stack/section-intro__form] 
+          // End: [column-7]
 
           // Start: [Column 5] 
-          +column({class: ["column-5", "lg:display-none"]})
+          +column({
+            class: [
+              "column-5", 
+              "lg:display-none"
+            ]
+          })
             div(class = `${rootClassName}__illustration`)
-            
           // End: [Column 5] 
-        // End: [Grid] 
-      // End: [Box: wrapper] 
-    // End: [Container] 
-  // End: [Section: intro] 
+        // End: [grid] 
+      // End: [box/section-intro__wrapper] 
+    // End: [container] 
