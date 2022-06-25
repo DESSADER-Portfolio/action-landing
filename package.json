@@ -13,7 +13,7 @@
     "lint:styles": "stylelint './src/**/*{.scss,.less}'",
     "lint:styles:fix": "stylelint './src/**/*{.scss,.less}' --fix",
     "cleancss": "purgecss -c purgecss.config.js",
-    "format:html": "js-beautify --type html --file ./build/*.html --output ./build/*.html --config .jsbeautifyrc"
+    "format:html": "js-beautify --type html --file ./build/*.html --replace --config .jsbeautifyrc"
   },
   "browserslist": [
     "> 1%",
